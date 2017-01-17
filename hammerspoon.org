@@ -1,0 +1,69 @@
+#+Title: Become a Keyboard Astronaut
+#+Author: Kyle Montag
+#+Email: kmontag@sessionm.com
+#+Date: January 2017
+#+REVEAL_THEME: solarized 
+#+OPTIONS: toc:nil num:nil
+#+OPTIONS: reveal_width:1200
+#+OPTIONS: reveal_height:800
+#+OPTIONS: reveal_title_slide:"<h1>%t</h1><h2>%a</h2><h3>%d</h3>"
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+OPTIONS: reveal_center:nil 
+#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t 
+#+REVEAL_TRANS: none
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Common Pitfalls for Rails PRs - Kyle Montag">
+
+* The Problem
+- The mouse is slow, inaccurate, and prone to human error.
+- The keyboard is deterministic and repeatable.
+- The keyboard can't control your windows.
+* Existing Solutions
+- Spotlight
+- Alfred
+- Quicksilver
+- AppleScript
+- Divvy
+- Witch
+- Slate
+- Keyboard Maestro
+- *HAMMERSPOON*
+* Your Hands and Your Keyboard
+- Hands naturally rest on the home-keys.
+- Modifier keys are annoying to hit, and create unwanted stress.
+- IT'S 2017, CAPS LOCK IS OUTDATED AND ANNOYING.
+- We want to be as efficient as possible, so why keep this useless key around?
+** Hyper-ify Your CAPS
+   To achieve our goal, we will be remapping our Caps Lock.
+
+   Depending on your operating system and version there are several different options:
+   - Sierra: Karabiner-Elements
+   - El Cap and lower: Seil + Karabiner
+   - Linux: xmodmap + i3
+   
+   Simply remap CAPS to all of the available modifier keys, referred to as Hyper.
+
+   Linux has a modifier key called Hyper already :)
+* How to Leverage Hyper
+Now that you have an easy to access modifier key, let's leverage it.
+
+Things you can do with your shiny new modifier key:
+- Open/focus specific applications.
+- Resizing windows.
+- Change window layout.
+- Move windows between monitors.
+- Menu automation.
+- Workflow automation.
+- Escape key!
+** Hyper AND Escape
+   - Another major efficiency killer on QWERTY keyboards is the ESC key.
+   - ESC is extremely inconvient to hit, however we can fix that!
+   - Map Caps to work as a modifier when held, and ESC when tapped.
+     - There are many different ways of doing this, OS dependant of course.
+* Hammerspoon, Hyper, and YOU
+Now that we have our Hyper key, and some ideas as to what we want to hotkey, we can start scripting!
+
+A great resource for basic Hammerspoon setup can be found [[https://github.com/lodestone/hyper-hacks][here]]. 
+
+This is the base config that I have extended for my own use.

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Become a Keyboard Astronaut</title>
+<meta name="author" content="(Kyle Montag)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="reveal/css/reveal.css"/>
+
+<link rel="stylesheet" href="reveal/css/theme/solarized.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Common Pitfalls for Rails PRs - Kyle Montag">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1>Become a Keyboard Astronaut</h1><h2>Kyle Montag</h2><h3>January 2017</h3>
+</section>
+
+<section>
+<section id="slide-orga4c3474">
+<h2 id="orga4c3474">The Problem</h2>
+<ul>
+<li>The mouse is slow, inaccurate, and prone to human error.</li>
+<li>The keyboard is deterministic and repeatable.</li>
+<li>The keyboard can't control your windows.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org9c83572">
+<h2 id="org9c83572">Existing Solutions</h2>
+<ul>
+<li>Spotlight</li>
+<li>Alfred</li>
+<li>Quicksilver</li>
+<li>AppleScript</li>
+<li>Divvy</li>
+<li>Witch</li>
+<li>Slate</li>
+<li>Keyboard Maestro</li>
+<li><b>HAMMERSPOON</b></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org6a5b7df">
+<h2 id="org6a5b7df">Your Hands and Your Keyboard</h2>
+<ul>
+<li>Hands naturally rest on the home-keys.</li>
+<li>Modifier keys are annoying to hit, and create unwanted stress.</li>
+<li>IT'S 2017, CAPS LOCK IS OUTDATED AND ANNOYING.</li>
+<li>We want to be as efficient as possible, so why keep this useless key around?</li>
+
+</ul>
+</section>
+<section id="slide-org3662b02">
+<h3 id="org3662b02">Hyper-ify Your CAPS</h3>
+<p>
+To achieve our goal, we will be remapping our Caps Lock.
+</p>
+
+<p>
+Depending on your operating system and version there are several different options:
+</p>
+<ul>
+<li>Sierra: Karabiner-Elements</li>
+<li>El Cap and lower: Seil + Karabiner</li>
+<li>Linux: xmodmap + i3</li>
+
+</ul>
+
+<p>
+Simply remap CAPS to all of the available modifier keys, referred to as Hyper.
+</p>
+
+<p>
+Linux has a modifier key called Hyper already :)
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org25770f7">
+<h2 id="org25770f7">How to Leverage Hyper</h2>
+<p>
+Now that you have an easy to access modifier key, let's leverage it.
+</p>
+
+<p>
+Things you can do with your shiny new modifier key:
+</p>
+<ul>
+<li>Open/focus specific applications.</li>
+<li>Resizing windows.</li>
+<li>Change window layout.</li>
+<li>Move windows between monitors.</li>
+<li>Menu automation.</li>
+<li>Workflow automation.</li>
+<li>Escape key!</li>
+
+</ul>
+</section>
+<section id="slide-org04e2a55">
+<h3 id="org04e2a55">Hyper AND Escape</h3>
+<ul>
+<li>Another major efficiency killer on QWERTY keyboards is the ESC key.</li>
+<li>ESC is extremely inconvient to hit, however we can fix that!</li>
+<li>Map Caps to work as a modifier when held, and ESC when tapped.
+<ul>
+<li>There are many different ways of doing this, OS dependant of course.</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org0e17dbb">
+<h2 id="org0e17dbb">Hammerspoon, Hyper, and YOU</h2>
+<p>
+Now that we have our Hyper key, and some ideas as to what we want to hotkey, we can start scripting!
+</p>
+
+<p>
+A great resource for basic Hammerspoon setup can be found <a href="https://github.com/lodestone/hyper-hacks">here</a>. 
+</p>
+
+<p>
+This is the base config that I have extended for my own use.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="reveal/lib/js/head.min.js"></script>
+<script src="reveal/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: false,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.10,
+minScale: 0.50,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
