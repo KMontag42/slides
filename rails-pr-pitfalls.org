@@ -1,0 +1,42 @@
+#+Title: Rails Pull Requests
+#+Author: Kyle Montag
+#+Email: kmontag@sessionm.com
+#+Date: January 2017
+#+REVEAL_THEME: solarized 
+#+OPTIONS: toc:nil num:nil
+#+OPTIONS: reveal_width:1200
+#+OPTIONS: reveal_height:800
+#+OPTIONS: reveal_title_slide:"<h1>%t</h1><h2>%a</h2><h3>%d</h3>"
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+OPTIONS: reveal_center:nil 
+#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t 
+#+REVEAL_TRANS: linear
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Common Pitfalls for Rails PRs - Kyle Montag">
+
+* Schema.rb
+- The biggest contributor to merge conflicts in any Rails app.
+- Things to consider:
+  - Timestamp definition
+    - This line will be where the vast majority of your conflicts emerge from,
+      ensure that the timestamp is the newer of the conflicting values and continue.
+  - Index names, make sure that your local database has the same index names as the `schema.rb` file.
+** Small Details
+ - Remove all `pry` statements.
+ - Remove all debug level logger calls
+ - Remove any non-standard testing seeds
+* Just Git Things
+- For those of you that use RubyMine, embrace their merge tool, it is amazing.
+- Make sure that your repo is configured to ignore whitespace.
+- Learn to love cherry-pick, [[http://think-like-a-git.net/sections/rebase-from-the-ground-up/cherry-picking-explained.html][guide]].
+- Keep your local branches clean, [[http://stevenharman.net/git-clean-delete-already-merged-branches][guide]]
+** Oddities
+ - Things like `cache version` will generally create some kind of merge conflict, in general
+   take the newest timestamp.
+ - Use a system-wide `.gitignore` to ensure that macOS specific files like .DS_Store aren't committed.
+ - If your local branch is _really_ dirty, stash your changes, reset head hard, and try again.
+* Other Good Reading
+- [[https://www.codementor.io/git/tutorial/10-common-git-problems-fix][10 common fixes]]
+- [[https://help.github.com/articles/using-git-blame-to-trace-changes-in-a-file/][Using git blame]]
+- [[https://services.github.com/classnotes/][GitHub resources]]

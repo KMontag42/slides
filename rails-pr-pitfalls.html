@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Rails Pull Requests</title>
+<meta name="author" content="(Kyle Montag)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///Users/kmontag/reveal/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///Users/kmontag/reveal/css/theme/solarized.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///Users/kmontag/reveal/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Common Pitfalls for Rails PRs - Kyle Montag">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1>Rails Pull Requests</h1><h2>Kyle Montag</h2><h3>January 2017</h3>
+</section>
+
+<section>
+<section id="slide-org9ed5e04">
+<h2 id="org9ed5e04">Schema.rb</h2>
+<ul>
+<li>The biggest contributor to merge conflicts in any Rails app.</li>
+<li>Things to consider:
+<ul>
+<li>Timestamp definition
+<ul>
+<li>This line will be where the vast majority of your conflicts emerge from,
+ensure that the timestamp is the newer of the conflicting values and continue.</li>
+
+</ul></li>
+<li>Index names, make sure that your local database has the same index names as the `schema.rb` file.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org8c3e418">
+<h3 id="org8c3e418">Small Details</h3>
+<ul>
+<li>Remove all `pry` statements.</li>
+<li>Remove all debug level logger calls</li>
+<li>Remove any non-standard testing seeds</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org9917917">
+<h2 id="org9917917">Just Git Things</h2>
+<ul>
+<li>For those of you that use RubyMine, embrace their merge tool, it is amazing.</li>
+<li>Make sure that your repo is configured to ignore whitespace.</li>
+<li>Learn to love cherry-pick, <a href="http://think-like-a-git.net/sections/rebase-from-the-ground-up/cherry-picking-explained.html">guide</a>.</li>
+<li>Keep your local branches clean, <a href="http://stevenharman.net/git-clean-delete-already-merged-branches">guide</a></li>
+
+</ul>
+</section>
+<section id="slide-orgf6ddb63">
+<h3 id="orgf6ddb63">Oddities</h3>
+<ul>
+<li>Things like `cache version` will generally create some kind of merge conflict, in general
+take the newest timestamp.</li>
+<li>Use a system-wide `.gitignore` to ensure that macOS specific files like .DS<sub>Store</sub> aren't committed.</li>
+<li>If your local branch is <span class="underline">really</span> dirty, stash your changes, reset head hard, and try again.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3efa118">
+<h2 id="org3efa118">Other Good Reading</h2>
+<ul>
+<li><a href="https://www.codementor.io/git/tutorial/10-common-git-problems-fix">10 common fixes</a></li>
+<li><a href="https://help.github.com/articles/using-git-blame-to-trace-changes-in-a-file/">Using git blame</a></li>
+<li><a href="https://services.github.com/classnotes/">GitHub resources</a></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///Users/kmontag/reveal/lib/js/head.min.js"></script>
+<script src="file:///Users/kmontag/reveal/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: false,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.10,
+minScale: 0.50,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///Users/kmontag/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'file:///Users/kmontag/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///Users/kmontag/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///Users/kmontag/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'file:///Users/kmontag/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
