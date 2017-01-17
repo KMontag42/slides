@@ -67,3 +67,4 @@ Now that we have our Hyper key, and some ideas as to what we want to hotkey, we 
 A great resource for basic Hammerspoon setup can be found [[https://github.com/lodestone/hyper-hacks][here]]. 
 
 This is the base config that I have extended for my own use.
+* Thanks!
