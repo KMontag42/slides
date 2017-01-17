@@ -13,7 +13,7 @@
 #+OPTIONS: reveal_center:nil 
 #+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t 
 #+REVEAL_TRANS: none
-#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Common Pitfalls for Rails PRs - Kyle Montag">
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Become a Keyboard Astronaut - Kyle Montag">
 
 * The Problem
 - The mouse is slow, inaccurate, and prone to human error.
