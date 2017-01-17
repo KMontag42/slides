@@ -34,7 +34,7 @@
 ** Oddities
  - Things like `cache version` will generally create some kind of merge conflict, in general
    take the newest timestamp.
- - Use a system-wide `.gitignore` to ensure that macOS specific files like .DS_Store aren't committed.
+ - Use a system-wide `.gitignore` to ensure that macOS specific files like DS Store aren't committed.
  - If your local branch is _really_ dirty, stash your changes, reset head hard, and try again.
 * Other Good Reading
 - [[https://www.codementor.io/git/tutorial/10-common-git-problems-fix][10 common fixes]]
